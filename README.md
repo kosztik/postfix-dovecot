@@ -1,15 +1,17 @@
 # postfix-dovecot
 In testing …
 
-= Run the container =
+## Run the container
  docker run -d -e maildomain=yourdomain.xyz -p 25:25 -p 465:465 -p 143:143 -p 993:993 –name postfix-dovecot daone/postfix-dovecot
 
-= Account creation =
-#- Install mkpasswd:
+## Account creation
+1. Install mkpasswd:
  apt-get install whois
-#- Generate encrypted password:
+
+2. Generate encrypted password:
  mkpasswd your_password 
-#- Create the user:
+
+3. Create the user:
  docker exec postfix-dovecot useradd -m -G mail -p encrypted_password user
 
 = Data out of the container =
