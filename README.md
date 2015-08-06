@@ -16,3 +16,13 @@ In testing …
 
 ## Data out of the container
  ```docker run -d -e maildomain=yourdomain.xyz -v /path_for_postfix_mail_delivery:/var/mail -v path_for_imap_storage:/home -p 25:25 -p 465:465 -p 143:143 -p 993:993 --name postfix-dovecot daone/postfix-dovecot```
+
+## Issues and solutions.
+* Thunderbird failed to find the settings for your email account.
+
+To check if OCSP is the cause of the trouble disable it temporarily and retry to connect to your server.
+
+Preferences -> Advanced -> Certificates -> Validation -> Uncheck "Use the Online Certificate Status Protocol (OCSP) to confirm the current validity of certificates"
+
+http://unix.stackexchange.com/questions/123367/thunderbird-fails-to-connect-to-dovecot-and-postfix
+
