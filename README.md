@@ -1,12 +1,16 @@
 # postfix-dovecot
 In testing …
 
-docker run -d -e maildomain=yourdomain.xyz -p 25:25 -p 465:465 -p 143:143 -p 993:993 –name postfix-dovecot -h postfix-dovecot daone/postfix-dovecot
+= Run the container =
+ docker run -d -e maildomain=yourdomain.xyz -p 25:25 -p 465:465 -p 143:143 -p 993:993 –name postfix-dovecot daone/postfix-dovecot
 
-Account creation: 
-1- Install mkpasswd:
+= Account creation =
+#- Install mkpasswd:
  apt-get install whois
-1- Generate encrypted password:
+#- Generate encrypted password:
  mkpasswd your_password 
-2- Create the user:
+#- Create the user:
  docker exec postfix-dovecot useradd -m -G mail -p encrypted_password user
+
+= Data out of the container =
+ docker run -d -e maildomain=yourdomain.xyz -v /path_for_postfix_mail_delivery:/var/mail -v path_for_imap_storage:/home -p 25:25 -p 465:465 -p 143:143 -p 993:993 --name postfix-dovecot daone/postfix-dovecot
