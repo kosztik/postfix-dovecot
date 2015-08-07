@@ -1,9 +1,6 @@
 From ubuntu:trusty
 MAINTAINER David Gilly 
 
-EXPOSE 25 465 143 993
-VOLUME ["/var/mail","/home"]
-
 # Set noninteractive mode for apt-get
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -20,6 +17,9 @@ ADD dovecot/10-auth.conf /etc/dovecot/conf.d/
 ADD dovecot/10-master.conf /etc/dovecot/conf.d/
 ADD dovecot/10-ssl.conf /etc/dovecot/conf.d/
 ADD postfix/master.cf /etc/postfix/
+
+EXPOSE 25 465 143 993
+VOLUME ["/var/mail","/home"]
 
 # Run
 CMD /install.sh;/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
