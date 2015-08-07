@@ -1,6 +1,8 @@
 # postfix-dovecot
 In testing …
 
+Postfix and Dovecot imap with STARTTLS encryption.
+
 ## Run the container
  ```docker run -d -e maildomain=yourdomain.xyz -p 25:25 -p 465:465 -p 143:143 -p 993:993 –name postfix-dovecot daone/postfix-dovecot```
 
