@@ -1,6 +1,9 @@
 From ubuntu:trusty
 MAINTAINER David Gilly 
 
+EXPOSE 25 465 143 993
+VOLUME ["/var/mail","/home"]
+
 # Set noninteractive mode for apt-get
 ENV DEBIAN_FRONTEND noninteractive
 
