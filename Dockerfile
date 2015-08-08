@@ -18,7 +18,7 @@ ADD dovecot/10-master.conf /etc/dovecot/conf.d/
 ADD dovecot/10-ssl.conf /etc/dovecot/conf.d/
 ADD postfix/master.cf /etc/postfix/
 
-EXPOSE 25 465 143 993
+EXPOSE 25 143 587 993
 VOLUME ["/var/mail","/home"]
 
 # Run
