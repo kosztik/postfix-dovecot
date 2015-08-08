@@ -25,7 +25,7 @@ Generate your certificate :
 
 Save certificate as ssl.crt and key as ssl.key.
 
-Add -v path_to_your_certificate:/ssl to ```docker run``` command.
+Add ```-v path_to_your_certificate:/ssl``` to ```docker run``` command.
 
 ```docker exec postfix-dovecot ln -s /ssl/ssl.crt /etc/dovecot/dovecot.pem```
 
