@@ -14,7 +14,7 @@ Postfix and Dovecot imap with STARTTLS encryption.
  ```mkpasswd your_password```
 
 3. Create the user:
- ```docker exec postfix-dovecot create_user.sh *user*```
+ ```docker exec postfix-dovecot create_user.sh *user encrypted_password*```
 
 ## Data out of the container
  ```docker run -d -e maildomain=yourdomain.xyz -v /path_for_postfix_mail_delivery:/var/mail -v path_for_imap_storage:/home -p 25:25 -p 465:465 -p 143:143 -p 993:993 --name postfix-dovecot daone/postfix-dovecot```
