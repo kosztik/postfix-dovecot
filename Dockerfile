@@ -13,6 +13,7 @@ RUN apt-get -y install supervisor postfix dovecot-common dovecot-imapd
 
 # Add files
 ADD install.sh /
+ADD create_user.sh /usr/local/bin/
 ADD dovecot/10-auth.conf /etc/dovecot/conf.d/
 ADD dovecot/10-master.conf /etc/dovecot/conf.d/
 ADD dovecot/10-ssl.conf /etc/dovecot/conf.d/
